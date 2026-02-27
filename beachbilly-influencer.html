@@ -444,18 +444,18 @@
         <div class="link-text">
           <div class="link-title">Beachside Circle Boats</div>
           <div class="link-sub">Electric circle boat rentals &bull; Orange Beach</div>
-        </a>
+        </div>
         <span class="link-arrow">&rsaquo;</span>
-      </div>
+      </a>
 
       <a class="link-item" href="#charterModal">
         <span class="link-icon">&#x1F3A3;</span>
         <div class="link-text">
           <div class="link-title">Bottomed Out Fishing Charters</div>
           <div class="link-sub">Deep sea fishing trips &bull; Gulf Shores</div>
-        </a>
+        </div>
         <span class="link-arrow">&rsaquo;</span>
-      </div>
+      </a>
     </div>
 
     <!-- ===== FOOD & DRINK ===== -->
@@ -467,9 +467,9 @@
         <div class="link-text">
           <div class="link-title">The Galley on the River</div>
           <div class="link-sub">Waterfront seafood &amp; craft drinks &bull; Bon Secour</div>
-        </a>
+        </div>
         <span class="link-arrow">&rsaquo;</span>
-      </div>
+      </a>
     </div>
 
     <!-- ===== BEACHBILLY CONTENT ===== -->
@@ -480,18 +480,18 @@
         <div class="link-text">
           <div class="link-title">Beachbilly TV</div>
           <div class="link-sub">Watch our latest episodes &amp; adventures</div>
-        </a>
+        </div>
         <span class="link-arrow">&rsaquo;</span>
-      </div>
+      </a>
 
       <a class="link-item" href="#merchModal">
         <span class="link-icon">&#x1F6CD;&#xFE0F;</span>
         <div class="link-text">
           <div class="link-title">Merch Store</div>
           <div class="link-sub">Official Beachbilly gear &amp; apparel</div>
-        </a>
+        </div>
         <span class="link-arrow">&rsaquo;</span>
-      </div>
+      </a>
 
       <a href="https://www.beachbillylifestyle.com/" class="link-item" target="_blank">
         <span class="link-icon">&#x1F399;&#xFE0F;</span>
@@ -695,7 +695,7 @@
       <div style="font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 10px;">Select a Date</div>
       <div class="calendar-grid" id="circleboatCalendar"></div>
 
-      <div id="circleboatForm" style="display:none; background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+      <div id="circleboatForm" style="background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
         <div style="font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 14px;">&#x1F4CB; Reserve Your Boat</div>
         <div id="circleboatDateDisplay" style="color: #d4a44c; font-weight: 600; margin-bottom: 12px;"></div>
         <div style="display: grid; gap: 10px;">
@@ -770,7 +770,7 @@
       <div style="font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 10px;">Select a Date</div>
       <div class="calendar-grid" id="charterCalendar"></div>
 
-      <div id="charterForm" style="display:none; background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+      <div id="charterForm" style="background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
         <div style="font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 14px;">&#x1F4CB; Reserve Your Trip</div>
         <div id="charterDateDisplay" style="color: #d4a44c; font-weight: 600; margin-bottom: 12px;"></div>
         <div style="display: grid; gap: 10px;">
@@ -849,7 +849,7 @@
       <div style="font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 10px;">Select a Date</div>
       <div class="calendar-grid" id="galleyCalendar"></div>
 
-      <div id="galleyForm" style="display:none; background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+      <div id="galleyForm" style="background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
         <div style="font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 14px;">&#x1F37D;&#xFE0F; Reserve Your Table</div>
         <div id="galleyDateDisplay" style="color: #d4a44c; font-weight: 600; margin-bottom: 12px;"></div>
         <div style="display: grid; gap: 10px;">
@@ -2008,6 +2008,14 @@
         document.body.style.overflow = 'auto';
       }
     });
+    // CSS :target modal support - build calendars when hash changes
+    var bookingModals = {circleboatModal:'circleboat', charterModal:'charter', galleyModal:'galley'};
+    function checkHash() {
+      var h = location.hash.replace('#','');
+      if (bookingModals[h]) buildCalendar(bookingModals[h]);
+    }
+    window.addEventListener('hashchange', checkHash);
+    checkHash();
   </script>
 </body>
 </html>
