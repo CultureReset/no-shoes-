@@ -200,13 +200,15 @@
       font-size: 28px;
       flex-shrink: 0;
     }
-    .link-text { flex: 1; }
-    .link-title { font-size: 15px; font-weight: 600; }
+    .link-text { flex: 1; min-width: 0; }
+    .link-title { font-size: 15px; font-weight: 600; word-wrap: break-word; overflow-wrap: break-word; }
     .link-sub {
       font-size: 12px;
       font-weight: 400;
       color: var(--text-light);
       margin-top: 2px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     .link-item:hover .link-sub { color: rgba(0,0,0,0.6); }
     .link-arrow {
