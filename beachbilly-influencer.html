@@ -7,18 +7,18 @@
   <style>
     /* ====== THEME — Beach Billy black/sand/coastal ====== */
     :root {
-      --bg: #ffffff;
-      --card-bg: #f5f5f5;
-      --text: #1a1a1a;
-      --text-muted: #555555;
-      --text-light: #777777;
-      --link-bg: #f0f0f0;
-      --link-text: #1a1a1a;
-      --social-bg: #e8e8e8;
-      --social-fill: #333333;
+      --bg: #0a0a0a;
+      --card-bg: #141414;
+      --text: #ffffff;
+      --text-muted: #b0b0b0;
+      --text-light: #888888;
+      --link-bg: #1e1e1e;
+      --link-text: #ffffff;
+      --social-bg: #1e1e1e;
+      --social-fill: #b0b0b0;
       --accent: #d4a44c;
       --accent-hover: #e8bd6a;
-      --footer-text: #888888;
+      --footer-text: #555555;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -37,7 +37,7 @@
       border-radius: 24px;
       padding: 48px 40px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-      border: 1px solid #ddd;
+      border: 1px solid #2a2a2a;
     }
 
     /* Profile */
@@ -118,7 +118,7 @@
       transition: all 0.3s ease;
       cursor: pointer;
       text-decoration: none;
-      border: 1px solid #ddd;
+      border: 1px solid #333;
     }
     .social-icon:hover {
       background: var(--accent);
@@ -184,7 +184,7 @@
       font-weight: 600;
       font-size: 15px;
       transition: all 0.3s ease;
-      border: 1px solid #ddd;
+      border: 1px solid #2a2a2a;
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -231,7 +231,7 @@
       letter-spacing: 0.5px;
     }
     .link-item:hover .link-badge {
-      background: #fff;
+      background: #000;
       color: var(--accent);
     }
 
@@ -254,7 +254,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255,255,255,0.98);
+      background: rgba(0,0,0,0.95);
       z-index: 1000;
       overflow-y: auto;
       padding: 20px;
@@ -265,7 +265,7 @@
       justify-content: center;
     }
     .modal-content {
-      background: #f2f2f2;
+      background: #1a1a1a;
       border-radius: 24px;
       padding: 40px;
       max-width: 700px;
@@ -273,7 +273,7 @@
       max-height: 90vh;
       overflow-y: auto;
       position: relative;
-      border: 1px solid #ddd;
+      border: 1px solid #333;
     }
     .modal-close {
       position: absolute;
@@ -283,7 +283,7 @@
       cursor: pointer;
       background: none;
       border: none;
-      color: #777;
+      color: #999;
       width: 40px;
       height: 40px;
       display: flex;
@@ -293,15 +293,15 @@
       transition: all 0.2s;
     }
     .modal-close:hover {
-      background: #e8e8e8;
-      color: #1a1a1afff;
+      background: #2a2a2a;
+      color: #ffffff;
     }
     .modal-header {
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 8px;
       padding-right: 40px;
-      color: #1a1a1afff;
+      color: #ffffff;
     }
     .modal-sub {
       font-size: 13px;
@@ -314,13 +314,13 @@
       display: flex;
       gap: 16px;
       padding: 16px;
-      background: #e8e8e8;
+      background: #2a2a2a;
       border-radius: 12px;
       margin-bottom: 12px;
       transition: all 0.3s ease;
       text-decoration: none;
       color: inherit;
-      border: 1px solid #ddd;
+      border: 1px solid #333;
     }
     .partner-card:hover {
       background: #333;
@@ -341,12 +341,12 @@
     .partner-name {
       font-size: 16px;
       font-weight: 600;
-      color: #1a1a1afff;
+      color: #ffffff;
       margin-bottom: 4px;
     }
     .partner-desc {
       font-size: 13px;
-      color: #777;
+      color: #999;
       line-height: 1.4;
       margin-bottom: 6px;
     }
@@ -370,7 +370,7 @@
     }
     .day-slot {
       padding: 14px;
-      background: #e8e8e8;
+      background: #2a2a2a;
       border-radius: 10px;
       text-align: center;
       cursor: pointer;
@@ -380,9 +380,9 @@
     .day-slot.available { border-color: var(--accent); }
     .day-slot.available:hover { background: var(--accent); color: #000; }
     .day-slot.booked { opacity: 0.5; cursor: not-allowed; }
-    .day-date { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 3px; }
+    .day-date { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
     .day-status { font-size: 11px; color: var(--accent); }
-    .day-slot.booked .day-status { color: #777; }
+    .day-slot.booked .day-status { color: #999; }
     .day-slot.available:hover .day-status { color: #000; }
 
     @media (max-width: 640px) {
@@ -396,8 +396,8 @@
   
     /* CSS-only modal support for file:// viewing */
     .modal:target { display: flex !important; z-index: 1000; }
-    a.link-item, a.modal-close { text-decoration: none; color: inherit; }
-    a.modal-close { display: flex; align-items: center; justify-content: center; color: #1a1a1a !important; z-index: 1002; position: fixed; }
+    a.link-item, a.modal-close, a.review-snippet { text-decoration: none; color: inherit; }
+    a.modal-close { display: flex; align-items: center; justify-content: center; color: #fff !important; z-index: 1002; position: fixed; }
   </style>
 </head>
 <body ontouchstart=""><span id="_" style="position:fixed;top:0;pointer-events:none;"></span>
@@ -684,7 +684,7 @@
       </div>
 
       <!-- Gallery -->
-      <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">&#x1F4F8; Photos</div>
+      <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 10px;">&#x1F4F8; Photos</div>
       <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:20px;">
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#00ada8,#009590); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F6A4;</div>
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#009590,#007a77); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F30A;</div>
@@ -692,11 +692,11 @@
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#005f5c,#004845); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F436;</div>
       </div>
 
-      <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px;">Select a Date</div>
+      <div style="font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 10px;">Select a Date</div>
       <div class="calendar-grid" id="circleboatCalendar"></div>
 
-      <div id="circleboatForm" style="display:none; background: #e8e8e8; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
-        <div style="font-size: 15px; font-weight: 600; color: #1a1a1afff; margin-bottom: 14px;">&#x1F4CB; Reserve Your Boat</div>
+      <div id="circleboatForm" style="display:none; background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+        <div style="font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 14px;">&#x1F4CB; Reserve Your Boat</div>
         <div id="circleboatDateDisplay" style="color: #d4a44c; font-weight: 600; margin-bottom: 12px;"></div>
         <div style="display: grid; gap: 10px;">
           <input type="text" placeholder="Full Name" class="form-input">
@@ -718,7 +718,7 @@
         </div>
       </div>
 
-      <div style="text-align:center; padding: 12px; background: #e8e8e8; border-radius: 10px;">
+      <div style="text-align:center; padding: 12px; background: #2a2a2a; border-radius: 10px;">
         <div style="font-size: 13px; color: #d4a44c; font-weight: 600;">&#x1F4DE; Call to Book: (601) 325-1205</div>
         <div style="font-size: 11px; color: #777; margin-top: 4px;">Mention &ldquo;Beachbilly&rdquo; for your exclusive deal</div>
       </div>
@@ -759,7 +759,7 @@
       </div>
 
       <!-- Gallery -->
-      <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">&#x1F4F8; Photos</div>
+      <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 10px;">&#x1F4F8; Photos</div>
       <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:20px;">
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#1B3A5C,#2E6B9E); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F3A3;</div>
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#2E6B9E,#4DA6FF); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F41F;</div>
@@ -767,11 +767,11 @@
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#0f2030,#1a3a5c); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x26F5;</div>
       </div>
 
-      <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px;">Select a Date</div>
+      <div style="font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 10px;">Select a Date</div>
       <div class="calendar-grid" id="charterCalendar"></div>
 
-      <div id="charterForm" style="display:none; background: #e8e8e8; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
-        <div style="font-size: 15px; font-weight: 600; color: #1a1a1afff; margin-bottom: 14px;">&#x1F4CB; Reserve Your Trip</div>
+      <div id="charterForm" style="display:none; background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+        <div style="font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 14px;">&#x1F4CB; Reserve Your Trip</div>
         <div id="charterDateDisplay" style="color: #d4a44c; font-weight: 600; margin-bottom: 12px;"></div>
         <div style="display: grid; gap: 10px;">
           <input type="text" placeholder="Full Name" class="form-input">
@@ -796,7 +796,7 @@
         </div>
       </div>
 
-      <div style="text-align:center; padding: 12px; background: #e8e8e8; border-radius: 10px;">
+      <div style="text-align:center; padding: 12px; background: #2a2a2a; border-radius: 10px;">
         <div style="font-size: 13px; color: #d4a44c; font-weight: 600;">&#x1F4DE; Call to Book: (205) 370-5091</div>
         <div style="font-size: 11px; color: #777; margin-top: 4px;">Mention &ldquo;Beachbilly&rdquo; for your exclusive deal</div>
       </div>
@@ -838,7 +838,7 @@
       </div>
 
       <!-- Gallery -->
-      <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px;">&#x1F4F8; Photos</div>
+      <div style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 10px;">&#x1F4F8; Photos</div>
       <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:20px;">
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#c2692d,#a05520); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F35D;</div>
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#a05520,#8b4513); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F354;</div>
@@ -846,11 +846,11 @@
         <div style="height:80px; border-radius:8px; background:linear-gradient(135deg,#6b3510,#4a250a); display:flex;align-items:center;justify-content:center;font-size:24px;">&#x1F305;</div>
       </div>
 
-      <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin: 0 0 10px;">Select a Date</div>
+      <div style="font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 10px;">Select a Date</div>
       <div class="calendar-grid" id="galleyCalendar"></div>
 
-      <div id="galleyForm" style="display:none; background: #e8e8e8; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
-        <div style="font-size: 15px; font-weight: 600; color: #1a1a1afff; margin-bottom: 14px;">&#x1F37D;&#xFE0F; Reserve Your Table</div>
+      <div id="galleyForm" style="display:none; background: #2a2a2a; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+        <div style="font-size: 15px; font-weight: 600; color: #ffffff; margin-bottom: 14px;">&#x1F37D;&#xFE0F; Reserve Your Table</div>
         <div id="galleyDateDisplay" style="color: #d4a44c; font-weight: 600; margin-bottom: 12px;"></div>
         <div style="display: grid; gap: 10px;">
           <input type="text" placeholder="Full Name" class="form-input">
@@ -891,7 +891,7 @@
         </div>
       </div>
 
-      <div style="text-align:center; padding: 12px; background: #e8e8e8; border-radius: 10px;">
+      <div style="text-align:center; padding: 12px; background: #2a2a2a; border-radius: 10px;">
         <div style="font-size: 13px; color: #d4a44c; font-weight: 600;">&#x1F4DE; Call for Reservations: (251) 200-5595</div>
         <div style="font-size: 11px; color: #777; margin-top: 4px;">Mention &ldquo;Beachbilly&rdquo; for your exclusive deal</div>
       </div>
@@ -909,7 +909,7 @@
       <div id="cartBar" style="display:none; background: var(--accent); color: #000; padding: 14px 20px; border-radius: 12px; margin-bottom: 20px; display: none;">
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <div><strong id="cartCount">0</strong> items &bull; <strong id="cartTotal">$0.00</strong></div>
-          <button onclick="openCheckout()" style="padding: 8px 20px; background: #fff; color: var(--accent); border: none; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer;">Checkout</button>
+          <button onclick="openCheckout()" style="padding: 8px 20px; background: #000; color: var(--accent); border: none; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer;">Checkout</button>
         </div>
       </div>
 
@@ -1185,11 +1185,11 @@
 
       <!-- Checkout form (hidden until checkout) -->
       <div id="checkoutForm" style="display:none;">
-        <div style="background: #e8e8e8; padding: 20px; border-radius: 12px; margin-top: 16px;">
-          <div style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">&#x1F6D2; Your Order</div>
-          <div id="checkoutItems" style="margin: 12px 0; font-size: 14px; color: #444;"></div>
+        <div style="background: #2a2a2a; padding: 20px; border-radius: 12px; margin-top: 16px;">
+          <div style="font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px;">&#x1F6D2; Your Order</div>
+          <div id="checkoutItems" style="margin: 12px 0; font-size: 14px; color: #ccc;"></div>
           <div style="border-top: 1px solid #444; padding-top: 12px; margin-bottom: 16px;">
-            <div style="display:flex; justify-content:space-between; font-size: 16px; font-weight: 700; color: #1a1a1a;">
+            <div style="display:flex; justify-content:space-between; font-size: 16px; font-weight: 700; color: #fff;">
               <span>Total</span>
               <span id="checkoutTotal">$0.00</span>
             </div>
@@ -1205,7 +1205,7 @@
         </div>
       </div>
 
-      <div style="text-align:center; padding: 12px; background: #e8e8e8; border-radius: 10px; margin-top: 16px;">
+      <div style="text-align:center; padding: 12px; background: #2a2a2a; border-radius: 10px; margin-top: 16px;">
         <div style="font-size: 13px; color: var(--accent); font-weight: 600;">&#x1F4E7; Questions? beachbillylifestyle@gmail.com</div>
         <div style="font-size: 11px; color: #777; margin-top: 4px;">Free shipping on orders over $75</div>
       </div>
@@ -1312,12 +1312,12 @@
       </div>
 
       <!-- Streaming links -->
-      <div style="margin-top: 20px; padding: 16px; background: #e8e8e8; border-radius: 12px;">
-        <div style="font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px;">&#x1F4FA; Also streaming on:</div>
+      <div style="margin-top: 20px; padding: 16px; background: #2a2a2a; border-radius: 12px;">
+        <div style="font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 10px;">&#x1F4FA; Also streaming on:</div>
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <a href="https://www.primevideo.com/detail/Beachbilly-Lifestyle/0TP4KG2B1FV1U9CGCQYPF7MO7H" target="_blank" style="padding: 8px 16px; background: #f2f2f2; border: 1px solid #444; border-radius: 8px; color: #d4a44c; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;">Prime Video</a>
-          <a href="https://tubitv.com/series/300001303/beachbilly-lifestyle" target="_blank" style="padding: 8px 16px; background: #f2f2f2; border: 1px solid #444; border-radius: 8px; color: #d4a44c; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;">Tubi</a>
-          <a href="https://www.youtube.com/@Beachbilly" target="_blank" style="padding: 8px 16px; background: #f2f2f2; border: 1px solid #444; border-radius: 8px; color: #d4a44c; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;">YouTube Channel</a>
+          <a href="https://www.primevideo.com/detail/Beachbilly-Lifestyle/0TP4KG2B1FV1U9CGCQYPF7MO7H" target="_blank" style="padding: 8px 16px; background: #1a1a1a; border: 1px solid #444; border-radius: 8px; color: #d4a44c; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;">Prime Video</a>
+          <a href="https://tubitv.com/series/300001303/beachbilly-lifestyle" target="_blank" style="padding: 8px 16px; background: #1a1a1a; border: 1px solid #444; border-radius: 8px; color: #d4a44c; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;">Tubi</a>
+          <a href="https://www.youtube.com/@Beachbilly" target="_blank" style="padding: 8px 16px; background: #1a1a1a; border: 1px solid #444; border-radius: 8px; color: #d4a44c; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;">YouTube Channel</a>
         </div>
       </div>
     </div>
@@ -1332,7 +1332,7 @@
     }
     .social-post {
       background: var(--link-bg);
-      border: 1px solid #ddd;
+      border: 1px solid #2a2a2a;
       border-radius: 14px;
       padding: 16px;
       transition: all 0.3s ease;
@@ -1363,7 +1363,7 @@
     .post-author {
       font-size: 13px;
       font-weight: 600;
-      color: #1a1a1a;
+      color: #fff;
     }
     .post-platform {
       font-size: 11px;
@@ -1371,7 +1371,7 @@
     }
     .post-body {
       font-size: 14px;
-      color: #444;
+      color: #ccc;
       line-height: 1.6;
       margin-bottom: 10px;
     }
@@ -1411,7 +1411,7 @@
       width: 100%;
       height: 200px;
       background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-      border: 1px solid #ddd;
+      border: 1px solid #333;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
@@ -1431,7 +1431,7 @@
     }
     .play-label {
       font-size: 13px;
-      color: #777;
+      color: #999;
       font-weight: 500;
     }
     .post-embed-placeholder:hover .play-label {
@@ -1455,14 +1455,14 @@
       padding-right: 8px;
     }
     .video-feed::-webkit-scrollbar { width: 6px; }
-    .video-feed::-webkit-scrollbar-track { background: #f2f2f2; border-radius: 3px; }
+    .video-feed::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 3px; }
     .video-feed::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
     .video-feed::-webkit-scrollbar-thumb:hover { background: #d4a44c; }
     .video-card {
-      background: #e8e8e8;
+      background: #2a2a2a;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #ddd;
+      border: 1px solid #333;
     }
     .video-card.hidden { display: none; }
     .video-embed {
@@ -1483,12 +1483,12 @@
     .video-title {
       font-size: 15px;
       font-weight: 600;
-      color: #1a1a1a;
+      color: #fff;
       margin-bottom: 4px;
     }
     .video-desc {
       font-size: 13px;
-      color: #777;
+      color: #999;
     }
   </style>
 
@@ -1502,10 +1502,10 @@
     }
     .merch-tab {
       padding: 8px 16px;
-      background: #e8e8e8;
-      border: 1px solid #ddd;
+      background: #2a2a2a;
+      border: 1px solid #333;
       border-radius: 20px;
-      color: #777;
+      color: #999;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
@@ -1522,10 +1522,10 @@
       gap: 14px;
     }
     .merch-card {
-      background: #e8e8e8;
+      background: #2a2a2a;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #ddd;
+      border: 1px solid #333;
       transition: all 0.3s ease;
     }
     .merch-card:hover {
@@ -1550,7 +1550,7 @@
     .merch-name {
       font-size: 13px;
       font-weight: 600;
-      color: #1a1a1a;
+      color: #fff;
     }
     .merch-price {
       font-size: 14px;
@@ -1567,10 +1567,10 @@
     }
     .size-btn {
       padding: 4px 10px;
-      background: #f2f2f2;
+      background: #1a1a1a;
       border: 1px solid #444;
       border-radius: 6px;
-      color: #777;
+      color: #999;
       font-size: 11px;
       font-weight: 600;
       cursor: pointer;
@@ -1601,7 +1601,7 @@
     .merch-add.added {
       background: #10b981;
       border-color: #10b981;
-      color: #1a1a1a;
+      color: #fff;
     }
     @media (max-width: 640px) {
       .merch-grid { grid-template-columns: 1fr; }
@@ -1609,10 +1609,10 @@
 
     .form-input {
       padding: 12px;
-      background: #f2f2f2;
+      background: #1a1a1a;
       border: 1px solid #444;
       border-radius: 8px;
-      color: #1a1a1a;
+      color: #fff;
       font-size: 14px;
       width: 100%;
     }
